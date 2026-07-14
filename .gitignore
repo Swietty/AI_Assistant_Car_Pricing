@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+env/
+
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Training logs
+catboost_info/
+logs/
+wandb/
+mlruns/
+
+# Large trained models
+models/*.keras
+models/*.h5
+models/*.pkl
+models/*.joblib
+models/*.onnx
+
+# datasets
+data/*.csv
+data/*.xlsx
+data/*.json
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
+
+test.ipynb
