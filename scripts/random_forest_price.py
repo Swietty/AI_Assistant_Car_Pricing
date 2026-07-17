@@ -10,7 +10,6 @@ from sklearn.metrics import (
     r2_score
 )
 
-
 # ==========================
 # 1. Daten laden
 # ==========================
@@ -19,10 +18,8 @@ df = pd.read_csv(
     "data/cars_ml_onehot.csv"
 )
 
-
 print("Dataset geladen:")
 print(df.shape)
-
 
 # ==========================
 # 2. Features und Target
@@ -41,14 +38,12 @@ y = df["price_log"]
 # ==========================
 # 3. Train/Test Split
 # ==========================
-
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
     test_size=0.2,
     random_state=42
 )
-
 
 print("Train samples:", X_train.shape)
 print("Test samples:", X_test.shape)
@@ -57,7 +52,6 @@ print("Test samples:", X_test.shape)
 # ==========================
 # 4. Random Forest Modell
 # ==========================
-
 rf = RandomForestRegressor(
     n_estimators=300,
     max_depth=None,
@@ -70,7 +64,6 @@ rf = RandomForestRegressor(
 
 print("Training gestartet...")
 
-
 rf.fit(
     X_train,
     y_train
@@ -78,7 +71,6 @@ rf.fit(
 
 
 print("Training abgeschlossen.")
-
 
 # ==========================
 # 5. Modell Evaluation
@@ -88,11 +80,9 @@ pred_log = rf.predict(
     X_test
 )
 
-
 # Zurück in Euro umwandeln
 pred_price = np.exp(pred_log)
 true_price = np.exp(y_test)
-
 
 mae = mean_absolute_error(
     true_price,
@@ -111,13 +101,11 @@ r2 = r2_score(
     pred_price
 )
 
-
 print("\nModel Evaluation")
 print("-----------------------")
 print(f"MAE : {mae:.2f} €")
 print(f"RMSE: {rmse:.2f} €")
 print(f"R²  : {r2:.4f}")
-
 
 # ==========================
 # 6. Modell speichern
@@ -125,12 +113,10 @@ print(f"R²  : {r2:.4f}")
 
 model_path = "models/price_model.pkl"
 
-
 joblib.dump(
     rf,
     model_path
 )
-
 
 print("\nModell gespeichert:")
 print(model_path)
