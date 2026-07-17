@@ -60,42 +60,35 @@ python -m streamlit run app\app.py
 
 '''
 
+## Author
 
+Svitlana Ihnat
 
-AI_Assistant_Car_Pricing/
+AI_Assistant_Car_Pricing/  
 
-│
-├── app/
-│   │
-│   ├── app.py                  ← главное приложение
-│   ├── price_prediction.py     ← работа с Random Forest
-│   ├── damage_prediction.py    ← работа с CNN
-│   ├── damage_rules.py         ← расчет снижения цены
-│   
-│
-├── models/
-│   ├── price_model.pkl
-│   └── damage_cnn.keras
-│
-├── data/
-│   └── cars_ml_onehot.csv
-│
-├── cnn/
-│   ├── train_damage_model.py
-│   └── predict_damage.py
-│
+│  
+├── app/  
+│   │  
+│   ├── app.py                    ← главное приложение
+│   ├── price_prediction.py       ← работа с Random Forest
+│   ├── damage_prediction.py      ← работа с CNN
+│   ├── damage_rules.py           ← расчет снижения цены
+│     
+│  
+├── models/  
+│   ├── price_model.pkl  
+│   └── damage_cnn.keras  
+│  
+├── data/  
+│   └── cars_ml_onehot.csv  
+│  
 ├── scripts/
-│   └── random_forest_price.py
+│   └── random_forest_price.py  
+    ├── train_damage_model.py  
+│   └── predict_damage.py  
 │
 └── ml_notebooks/
-'''
-conda activate ml_2026
-cd /d D:\New_26\AI_Assistant_Car_Pricing
-streamlit run app/app.py
+    ├── damage_detection.ipynb
+    ├── damage_model_evaluation.ipynb
+    ├──
 
-python -m streamlit run app\app.py
-
-
-python scripts\test_cnn.py
-python test_prediction.py
-'''
